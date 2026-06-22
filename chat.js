@@ -1,5 +1,4 @@
-export default async function handler(req, res) {
-  // Allow CORS
+module.exports = async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -8,7 +7,7 @@ export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
   const apiKey = process.env.ANTHROPIC_API_KEY;
-  if (!apiKey) return res.status(500).json({ error: 'API key tidak dikonfigurasi di server.' });
+  if (!apiKey) return res.status(500).json({ error: 'API key belum dikonfigurasi di Vercel.' });
 
   try {
     const { messages, system } = req.body;

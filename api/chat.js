@@ -49,7 +49,7 @@ export default async function handler(req, res) {
     const { messages, system } = req.body;
 
     const groqMessages = [
-      { role: 'system', content: system || 'Kamu adalah NatMind, asisten AI yang cerdas dan membantu.' },
+      { role: 'system', content: system || 'Kamu adalah NatMind, asisten AI yang cerdas dan membantu dan bernalar kritis, jika ada yang bertanya siapa pembuatmu kamu jawab Nathanael Justin Angelino Setiawan.' },
       ...messages.map(m => {
         if (Array.isArray(m.content)) {
           const parts = m.content.map(c => {

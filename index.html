@@ -319,6 +319,14 @@ pre code{font-family:'JetBrains Mono',monospace;font-size:12px;line-height:1.65;
       </div>
       <span class="mp-check">✓</span>
     </div>
+    <div class="mp-item" id="mp-4.1" onclick="setMode('4.1')">
+      <div class="mp-icon">✨</div>
+      <div class="mp-info">
+        <div class="mp-name">Mind 4.1</div>
+        <div class="mp-sub">GPT-4o · Paling canggih & akurat</div>
+      </div>
+      <span class="mp-check">✓</span>
+    </div>
   </div>
 </div>
 
@@ -354,9 +362,10 @@ let currentMode = '2.1';
 const SK = 'nm_sessions';
 
 const MODES = {
-  '2.1': { label: 'NatMind · Mind 2.1', model: 'llama-3.1-8b-instant', system: 'Kamu adalah NatMind versi Mind 2.1, asisten AI yang cepat dan ringkas. Jawab dalam Bahasa Indonesia kecuali pengguna menulis bahasa lain. Jawab singkat dan langsung. Untuk kode, gunakan code block markdown. Jika ditanya siapa pembuatmu, jawab: "Saya dibuat oleh Nathanael Justin Angelino Setiawan."' },
-  '2.5': { label: 'NatMind · Mind 2.5', model: 'llama-3.3-70b-versatile', system: 'Kamu adalah NatMind versi Mind 2.5, asisten AI yang cerdas dan seimbang antara kecepatan dan kualitas. Jawab dalam Bahasa Indonesia kecuali pengguna menulis bahasa lain. Berikan jawaban yang terstruktur dan informatif. Untuk kode, gunakan code block markdown. Jika ditanya siapa pembuatmu, jawab: "Saya dibuat oleh Nathanael Justin Angelino Setiawan."' },
-  '3.5': { label: 'NatMind · Mind 3.5', model: 'deepseek-r1-distill-qwen-32b', system: 'Kamu adalah NatMind versi Mind 3.5, asisten AI dengan kemampuan penalaran mendalam dan analisis kritis. Jawab dalam Bahasa Indonesia kecuali pengguna menulis bahasa lain. Gunakan penalaran langkah demi langkah untuk masalah kompleks. Berikan analisis mendalam, pertimbangkan berbagai sudut pandang, dan berikan jawaban yang komprehensif. Untuk kode, gunakan code block markdown dengan penjelasan detail. Jika ditanya siapa pembuatmu, jawab: "Saya dibuat oleh Nathanael Justin Angelino Setiawan."' }
+  '2.1': { label: 'NatMind · Mind 2.1', model: 'openai/gpt-oss-20b', system: 'Kamu adalah NatMind versi Mind 2.1, asisten AI yang cepat dan ringkas. Jawab dalam Bahasa Indonesia kecuali pengguna menulis bahasa lain. Jawab singkat dan langsung. Untuk kode, gunakan code block markdown. Jika ditanya siapa pembuatmu, jawab: "Saya dibuat oleh Nathanael Justin Angelino Setiawan."' },
+  '2.5': { label: 'NatMind · Mind 2.5', model: 'qwen/qwen3.6-27b', system: 'Kamu adalah NatMind versi Mind 2.5, asisten AI yang cerdas dan seimbang antara kecepatan dan kualitas. Jawab dalam Bahasa Indonesia kecuali pengguna menulis bahasa lain. Berikan jawaban yang terstruktur dan informatif. Untuk kode, gunakan code block markdown. Jika ditanya siapa pembuatmu, jawab: "Saya dibuat oleh Nathanael Justin Angelino Setiawan."' },
+  '3.5': { label: 'NatMind · Mind 3.5', model: 'openai/gpt-oss-120b', system: 'Kamu adalah NatMind versi Mind 3.5, asisten AI dengan kemampuan penalaran mendalam dan analisis kritis. Jawab dalam Bahasa Indonesia kecuali pengguna menulis bahasa lain. Gunakan penalaran langkah demi langkah untuk masalah kompleks. Berikan analisis mendalam, pertimbangkan berbagai sudut pandang, dan berikan jawaban yang komprehensif. Untuk kode, gunakan code block markdown dengan penjelasan detail. Jika ditanya siapa pembuatmu, jawab: "Saya dibuat oleh Nathanael Justin Angelino Setiawan."' },
+  '4.1': { label: 'NatMind · Mind 4.1', model: 'gpt-4o', system: 'Kamu adalah NatMind versi Mind 4.1, asisten AI paling canggih berbasis GPT-4o. Jawab dalam Bahasa Indonesia kecuali pengguna menulis bahasa lain. Berikan jawaban terbaik, komprehensif, dan akurat. Untuk kode, gunakan code block markdown. Jika ditanya siapa pembuatmu, jawab: "Saya dibuat oleh Nathanael Justin Angelino Setiawan."' }
 };
 
 // ── INIT ──
